@@ -1,0 +1,35 @@
+@import '../../styles/';
+
+.main-search {
+    align-items: center;
+    background: rgba($color-white, 0.2);
+    border-radius: get-rem(2);
+    display: flex;
+    padding: get-rem(0) get-rem(10);
+
+    &__input {
+        background: transparent;
+        border: none;
+        color: $color-white;
+        padding: get-rem(10);
+        font-size: get-rem(16);
+        font-weight: 600;
+        line-height: 2;
+        width: 100%;
+
+        &:focus {
+          background: $color-white;
+          color: $color-grey-dark-1;
+          font-weight: 600;
+        }
+
+        &::placeholder {
+          color: $color-white;
+        }
+    }
+
+    &__icon {
+        fill: $color-white;
+        width: get-rem(30);
+    }
+}

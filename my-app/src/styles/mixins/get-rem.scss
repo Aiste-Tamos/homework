@@ -1,0 +1,6 @@
+$default-browser-font-size: 16;
+
+@function get-rem($size) {
+    $rem-size: $size / $default-browser-font-size;
+    @return (round($rem-size * 1000) / 1000) * 1rem;
+}
