@@ -1,5 +1,127 @@
 @import '../../styles/';
 
 .main-page {
+    @include typography-h3;
+
     background-color: $color-white;
+    height: 100vh;
+    width: 100%;
+
+    &__header {
+        align-items: center;
+        background: linear-gradient(to right, $color-primary, $color-secondary);
+        display: flex;
+        height: get-rem(100);
+        padding: get-rem(20) get-rem(20) get-rem(10);
+        position: relative;
+        width: 100%;
+    }
+
+    &__input-field {
+        align-items: center;
+        background: rgba($color-white, 0.2);
+        color: $color-white;
+        display: flex;
+        flex: 1 1 auto;
+        padding: get-rem(10);
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &__input-field-text {
+        @include typography-h3;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__icon {
+        fill: $color-white;
+        height: get-rem(30);
+        margin-right: get-rem(10);
+        width: get-rem(30);
+    }
+
+    &__search-button {
+        background-color: $color-white;
+        border: none;
+        border-radius: get-rem(2);
+        height: get-rem(50);
+        margin-left: auto;
+        width: get-rem(50);
+    }
+
+    &__search-button-icon {
+        fill: $color-primary;
+        height: get-rem(40);
+
+        svg {
+            fill: $color-primary;
+        }
+    }
+
+    &__dropdown {
+        display: none;
+
+        &--show {
+            align-items: center;
+            background-color: $color-white;
+            display: flex;
+            height: get-rem(60);
+            left: get-rem(70);
+            position: absolute;
+            margin-bottom: get-rem(10);
+            width: calc(100% - 90px);
+        }
+    }
+
+     &__results {
+        background-color: $color-white;
+        border-top: get-rem(1) solid $color-grey-light-2;
+        box-shadow: get-rem(1) get-rem(6) get-rem(5) rgba(0, 0, 0, 0.2);
+        left: get-rem(70);
+        padding: get-rem(15) get-rem(10) get-rem(10) get-rem(50);
+        position: absolute;
+        top: get-rem(80);
+        width: calc(100% - 90px);
+    }
+
+    &__item {
+        cursor: pointer;
+        list-style-type: none;
+        transition: all 0.1s;
+
+        &:not(:last-child) {
+            margin-bottom: get-rem(30);
+        }
+        
+        &:hover {
+            background-color: rgba($color-grey-light-2, 0.1);
+            transform: translateY(-1px);
+        }
+    }
+
+    &__item-button {
+        background: transparent;
+        border: none;
+        text-align: start;
+    }
+
+    &__error-message {
+        color: $color-red;
+    }
+
+    &__movie-title {
+        font-weight: 700;
+    }
+
+    &__movie-info {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    }
+
+    &__movie-section {
+        background: $color-white;
+        margin-top: get-rem(15);
+    }
 };

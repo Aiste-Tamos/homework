@@ -1,0 +1,25 @@
+@import '../../styles/';
+
+.dropdown {
+    display: flex;
+    align-content: center;
+    padding: get-rem(25) get-rem(30) 0;
+    position: relative;
+
+    &__wrapper {
+        width: 100%;
+    }
+
+    &__input-title {
+        @include typography-h4;
+
+        color: $color-grey-light-1;
+        letter-spacing: 0.2px;
+    }
+
+    &__icon {
+        height: get-rem(20);
+        margin: get-rem(15);
+        width: get-rem(20);
+    }
+}

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&family=Roboto:wght@300;400&display=swap');
+@import "../mixins/get-rem";
+
+$font-family: 'Roboto', sans-serif;
+
+@mixin base-font($font-size, $font-weight, $letter-spacing) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin typography-h1 {
+  @include base-font(get-rem(20), 600, 0);
+}
+
+@mixin typography-h2 {
+  @include base-font(get-rem(16), 600, 0);
+}
+
+@mixin typography-h3 {
+  @include base-font(get-rem(14), 500, 0);
+}
+
+@mixin typography-h4 {
+  @include base-font(get-rem(12), 600, 0);
+}
+
+@mixin typography-body {
+  @include base-font(get-rem(14), 400, 0);
+}

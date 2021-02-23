@@ -1,39 +1,40 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { ReactComponent as MovieIcon } from "../../assets/icons/movie.svg";
 
 import "./searchInput.scss";
 
 export const SearchInput = ({
   id,
+  ariaLabel,
   inputValue,
   onChange,
-  options,
   placeholder,
   className,
   ...other
 }) => {
   const mainClassName = "main-search";
   const inputClass = `${mainClassName}__input`;
-  const inputIconClassName = `${mainClassName}__icon`;
   const mainClass = classNames(mainClassName, className);
 
   const inputRef = useRef(null);
 
+  useEffect(() => {
+    inputRef.current.focus();
+  })
+
   return (
     <div className={mainClass} {...other}>
-        <MovieIcon className={inputIconClassName}/>
       <input
-        type="text"
+        autoFocus
+        type="search"
         className={inputClass}
         value={inputValue}
         onChange={onChange}
         id={id}
-        aria-label="search"
+        aria-label={ariaLabel}
         autoComplete="off"
         placeholder={placeholder}
-        // onKeyDown={handleSearchInputKeyDown}
         ref={inputRef}
       />
       </div>
@@ -43,12 +44,15 @@ export const SearchInput = ({
 SearchInput.propTypes = {
     id: PropTypes.string.isRequired,
     inputValue: PropTypes.string,
-    options: PropTypes.arrayOf(PropTypes.string),
+    placeholder: PropTypes.string,
     className: PropTypes.string,
+    ariaLabel: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
   };
   
   SearchInput.defaultProps = {
     inputValue: "",
-    options: [],
     className: "",
+    placeholder: "",
+    ariaLabel: "",
   };

@@ -1,2 +1,4 @@
 export * from "./MainPage";
-export * from "./MovieSearch";
+export * from "./MovieCard";
+export * from "./Dropdown";
+export * from "./SearchInput";
